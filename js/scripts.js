@@ -5,12 +5,11 @@ var romanNumerals = ["I","V","X","L","C","D","M"];
 
 var buildTestArray = function(string){
   var testArray = string.split("");
-  testArray.map(function(numeral) {
-    parseInt(numeral);
+  return testArray.map(function(numeral) {
+    return parseInt(numeral);
   });
-  return testArray;
 };
-var testArray = buildTestArray(test);
+
 
 
 
@@ -20,14 +19,14 @@ var writeNumeral = function(number,place){
     for (var i=0;i<number;i+=1) {
       numeral = numeral + romanNumerals[place]
     }
-  } else if (number === 4){
+  } else if (number === 4) {
     numeral = romanNumerals[place]+romanNumerals[place+1]
   } else if ((number>4) && (number<9)) {
     numeral = romanNumerals[place+1];
     for (var i=0;i<(number-5);i+=1) {
       numeral = numeral + romanNumerals[place]
     }
-  } else if (number > 8) {
+  } else if (number === 9) {
     numeral = romanNumerals[place]+romanNumerals[place+2];
   }
   return numeral;
@@ -45,16 +44,12 @@ var romanNum = function (string) {
   return output;
 };
 
+// UI logic
 $(document).ready(function() {
   $("#input").submit(function(event) {
     event.preventDefault();
-    alert("what!");
-
     var input = $(".number-input").val();
-    console.log(output);
-
     var output = romanNum(input);
-
     $("#output").text(output);
   });
 
