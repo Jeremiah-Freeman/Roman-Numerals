@@ -9,10 +9,17 @@
   </head>
   <body>
     <h1>Roman Numeral Translator</h1>
+  <div>
+    <form id="input">
+      <label for="number-input">Please input a number between 1 and 3999</label>
+      <input type="text" name="number-input" class="number-input">
+      <button type="submit">Translate</button>
+    </form>
+  </div>
 
     <div class="jumbotron">
       <h2>The Romans would say your number is</h2>
-      <h1 class="output"></h1>
+      <h1 id="output"></h1>
     </div>
 
   </body>
